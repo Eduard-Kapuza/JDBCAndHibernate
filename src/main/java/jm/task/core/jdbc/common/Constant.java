@@ -5,8 +5,11 @@ public class Constant {
     // connection
     public static final String URL = "jdbc:postgresql://localhost:5432/postgres";
 
+
     public static final String DRIVER = "org.postgresql.Driver";
+
     public static final String PASSWORD = "postgres";
+
     public static final String USER = "postgres";
 
     // query
