@@ -11,6 +11,7 @@ import java.util.List;
 import static jm.task.core.jdbc.common.Constant.*;
 
 public class UserDaoJDBCImpl implements UserDao {
+
     private final Connection connection = Util.getConnection();
 
     public void createUsersTable() {
@@ -19,8 +20,6 @@ public class UserDaoJDBCImpl implements UserDao {
         } catch (SQLException e) {
             System.out.println("Error create table");
             e.printStackTrace();
-        } finally {
-            System.out.println("The table has been created or exists");
         }
     }
 

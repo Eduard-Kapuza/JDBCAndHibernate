@@ -3,16 +3,13 @@ import jm.task.core.jdbc.service.UserService;
 import jm.task.core.jdbc.service.UserServiceImpl;
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.List;
 
 public class UserServiceTest {
     private final UserService userService = new UserServiceImpl();
-
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";
     private final byte testAge = 5;
-
 
     @Test
     public void dropUsersTable() {
@@ -98,5 +95,4 @@ public class UserServiceTest {
             Assert.fail("ѕри тестировании очистки таблицы пользователей произошло исключение\n" + e);
         }
     }
-
 }

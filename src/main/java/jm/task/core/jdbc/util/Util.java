@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.Objects;
-
 import static jm.task.core.jdbc.common.Constant.*;
 
 public class Util {
