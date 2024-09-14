@@ -29,5 +29,7 @@ public class Constant {
 
     public static final String GET_ALL_USERS_QUERY = "select * from users;";
 
-    public static final String CLEN_USERS_TABLE_QUERY = "truncate table users;";
+    public static final String CLEAN_USERS_TABLE_QUERY = "truncate table users;";
+
+    public static final String SELECT_USERS_FROM_TABLE_QUERY = "select * from users;";
 }
