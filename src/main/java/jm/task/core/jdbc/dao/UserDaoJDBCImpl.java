@@ -11,6 +11,7 @@ import java.util.List;
 import static jm.task.core.jdbc.common.Constant.*;
 
 public class UserDaoJDBCImpl implements UserDao {
+
     private final Connection connection = Util.getConnection();
 
     public void createUsersTable() {
@@ -19,8 +20,6 @@ public class UserDaoJDBCImpl implements UserDao {
         } catch (SQLException e) {
             System.out.println("Error create table");
             e.printStackTrace();
-        } finally {
-            System.out.println("The table has been created or exists");
         }
     }
 
@@ -77,7 +76,7 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        try (PreparedStatement preparedStatement = connection.prepareStatement(CLEN_USERS_TABLE_QUERY)) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement(CLEAN_USERS_TABLE_QUERY)) {
             preparedStatement.execute();
         } catch (SQLException e) {
             System.out.println("Error truncate table");
@@ -85,12 +84,12 @@ public class UserDaoJDBCImpl implements UserDao {
         }
     }
 
-    public void closeConnection() {
+    public static void closeConnection() {
         try {
-            connection.close();
-            System.out.println("connection to the database is closed");
+            Util.getConnection().close();
+            System.out.println("JDBC: connection to the database is closed");
         } catch (SQLException e) {
-            System.out.println("error when closing connection ");
+            System.out.println("JDBC: error when closing connection ");
         }
     }
 }
